@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kMMl+NK4x4JKbGNQNfij0kixLTnR99ZUy8X0wjh/4aQ=",
+  "Hash": "EQNprSqO+jDrUcutP+C+XaL+bg88gCZZ0R7PWZaZqAI=",
   "Source": "Qaryati",
   "BasePath": "_content/Qaryati",
   "Mode": "Default",
@@ -1233,6 +1233,25 @@
       "OriginalItemSpec": "wwwroot\\css\\components.css"
     },
     {
+      "Identity": "C:\\Users\\HH\\Desktop\\Qaryati\\wwwroot\\css\\responsive.css",
+      "SourceId": "Qaryati",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HH\\Desktop\\Qaryati\\wwwroot\\",
+      "BasePath": "_content/Qaryati",
+      "RelativePath": "css/responsive.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\responsive.css"
+    },
+    {
       "Identity": "C:\\Users\\HH\\Desktop\\Qaryati\\wwwroot\\css\\site.css",
       "SourceId": "Qaryati",
       "SourceType": "Discovered",
@@ -1250,6 +1269,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\HH\\Desktop\\Qaryati\\wwwroot\\css\\theme-minimal-luxury.css",
+      "SourceId": "Qaryati",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HH\\Desktop\\Qaryati\\wwwroot\\",
+      "BasePath": "_content/Qaryati",
+      "RelativePath": "css/theme-minimal-luxury.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\theme-minimal-luxury.css"
     },
     {
       "Identity": "C:\\Users\\HH\\Desktop\\Qaryati\\wwwroot\\favicon.ico",

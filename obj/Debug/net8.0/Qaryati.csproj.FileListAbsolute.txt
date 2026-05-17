@@ -138,3 +138,8 @@ C:\Users\HH\Desktop\Qaryati\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.Entit
 C:\Users\HH\Desktop\Qaryati\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\HH\Desktop\Qaryati\obj\Debug\net8.0\Qaryati.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\HH\Desktop\Qaryati\obj\Debug\net8.0\Qaryati.sourcelink.json
+C:\Users\HH\Desktop\Qaryati\bin\Debug\net8.0\publish\web.config
+C:\Users\HH\Desktop\Qaryati\bin\Debug\net8.0\publish\appsettings.Development.json
+C:\Users\HH\Desktop\Qaryati\bin\Debug\net8.0\publish\appsettings.json
+C:\Users\HH\Desktop\Qaryati\bin\Debug\net8.0\publish\Qaryati.deps.json
+C:\Users\HH\Desktop\Qaryati\bin\Debug\net8.0\publish\Qaryati.runtimeconfig.json

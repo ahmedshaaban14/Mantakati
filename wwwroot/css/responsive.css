@@ -1,0 +1,500 @@
+/* ================================================
+   RESPONSIVE DESIGN OPTIMIZATIONS
+   Mobile-First Approach for All Devices
+================================================ */
+
+/* ================================================
+   MOBILE DEVICES (< 480px)
+================================================ */
+
+@media (max-width: 479px) {
+    :root {
+        font-size: 14px;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Navbar Adjustments */
+    .custom-navbar,
+    .admin-navbar {
+        padding: 0.5rem 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .brand-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .custom-navbar-toggler {
+        padding: 0.4rem 0.6rem;
+    }
+
+    /* Hero Section */
+    .hero-box {
+        padding: 2rem 1rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-box h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-box .lead {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-box form {
+        flex-direction: column;
+    }
+
+    .hero-box input,
+    .hero-box .btn {
+        width: 100%;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Cards */
+    .service-card,
+    .category-card {
+        border-radius: 12px;
+    }
+
+    .service-card-body {
+        padding: 1rem;
+    }
+
+    .service-avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    /* Buttons */
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        width: 100%;
+    }
+
+    .nav-auth-btn {
+        width: 100%;
+    }
+
+    /* Search */
+    .custom-search-wrapper {
+        margin: 0.75rem 0;
+        width: 100%;
+    }
+
+    /* Section Header */
+    .section-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem 0;
+    }
+
+    .custom-footer .row {
+        gap: 1rem;
+    }
+
+    .custom-footer h6 {
+        font-size: 0.9rem;
+    }
+
+    .custom-footer p {
+        font-size: 0.85rem;
+    }
+
+    /* Tables */
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    /* Modals */
+    .modal-dialog {
+        margin: 1rem;
+    }
+
+    .modal-content {
+        border-radius: 16px;
+    }
+
+    .modal-header,
+    .modal-footer {
+        padding: 1rem;
+    }
+
+    .modal-body {
+        padding: 1.25rem;
+    }
+}
+
+/* ================================================
+   TABLETS (480px - 768px)
+================================================ */
+
+@media (min-width: 480px) and (max-width: 767px) {
+    :root {
+        font-size: 15px;
+    }
+
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    /* Navbar */
+    .custom-navbar-container {
+        gap: 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    /* Hero */
+    .hero-box {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .hero-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-box form {
+        flex-direction: column;
+    }
+
+    .hero-box input,
+    .hero-box .btn {
+        width: 100%;
+    }
+
+    /* Grid */
+    .grid-auto {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Buttons */
+    .btn {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.1rem;
+    }
+
+    /* Search */
+    .custom-search-wrapper {
+        min-width: 100%;
+    }
+
+    /* Section Header */
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ================================================
+   SMALL DESKTOPS (768px - 1024px)
+================================================ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        font-size: 16px;
+    }
+
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    /* Navbar */
+    .custom-navbar-container {
+        gap: 1rem;
+    }
+
+    /* Hero */
+    .hero-box {
+        padding: 3rem 2rem;
+    }
+
+    .hero-box h1 {
+        font-size: 2rem;
+    }
+
+    /* Grid */
+    .grid-auto {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Search */
+    .custom-search-wrapper {
+        min-width: 280px;
+        max-width: 350px;
+    }
+}
+
+/* ================================================
+   LARGE DESKTOPS (1024px+)
+================================================ */
+
+@media (min-width: 1024px) {
+    :root {
+        font-size: 17px;
+    }
+
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    /* Navbar */
+    .custom-navbar-container {
+        gap: 2rem;
+    }
+
+    /* Hero */
+    .hero-box {
+        padding: 4rem 3rem;
+    }
+
+    .hero-box h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Grid */
+    .grid-auto {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    /* Search */
+    .custom-search-wrapper {
+        min-width: 300px;
+        max-width: 400px;
+    }
+}
+
+/* ================================================
+   EXTRA LARGE DESKTOPS (1200px+)
+================================================ */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .hero-box {
+        max-width: 100%;
+    }
+
+    .grid-auto {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+
+/* ================================================
+   LANDSCAPE ORIENTATION
+================================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-box {
+        padding: 1.5rem 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-box h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-box .lead {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .main-content {
+        padding: 1rem 0;
+    }
+
+    nav {
+        padding: 0.5rem 0;
+    }
+}
+
+/* ================================================
+   TOUCH DEVICES
+================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    .btn,
+    .nav-link,
+    .custom-search-btn {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.75rem 1.25rem;
+    }
+
+    /* Remove hover effects on touch devices */
+    .btn:hover {
+        transform: none;
+    }
+
+    .nav-link:hover {
+        transform: none;
+    }
+
+    /* Keep active states */
+    .btn:active,
+    .nav-link:active {
+        opacity: 0.8;
+    }
+}
+
+/* ================================================
+   DESKTOP WITH POINTER
+================================================ */
+
+@media (hover: hover) and (pointer: fine) {
+    /* Smooth hover effects */
+    a,
+    button,
+    input[type="submit"] {
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+/* ================================================
+   HIGH RESOLUTION DISPLAYS
+================================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    /* Optimize for Retina displays */
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* ================================================
+   PRINT STYLES
+================================================ */
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    header,
+    nav,
+    footer,
+    .btn,
+    .custom-search-wrapper {
+        display: none;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    .card,
+    .service-card {
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* ================================================
+   DARK MODE PREFERENCES
+================================================ */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --bg-primary: #1e293b;
+        --bg-secondary: #0f172a;
+        --bg-tertiary: #334155;
+        --border-light: #334155;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .custom-navbar,
+    .admin-navbar {
+        background: rgba(15, 23, 42, 0.9);
+    }
+
+    .card,
+    .service-card {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        border-color: #334155;
+    }
+}
+
+/* ================================================
+   REDUCED MOTION PREFERENCES
+================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
