@@ -30,25 +30,25 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 
-    // Add hover effect to buttons
+    // Add hover effect to buttons - use CSS classes for better performance
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(btn => {
         btn.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.02)';
+            this.classList.add('btn-hover');
         });
         btn.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+            this.classList.remove('btn-hover');
         });
     });
 
-    // Add hover ripple effect for cards
+    // Add hover ripple effect for cards - use CSS classes for better performance
     const cards = document.querySelectorAll('.service-card, .category-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.boxShadow = '0 30px 60px rgba(99, 102, 241, 0.25)';
+            this.classList.add('card-hover');
         });
         card.addEventListener('mouseleave', function() {
-            this.style.boxShadow = 'var(--shadow-card)';
+            this.classList.remove('card-hover');
         });
     });
 
@@ -79,15 +79,14 @@ document.addEventListener('DOMContentLoaded', function() {
     inputs.forEach(input => {
         input.addEventListener('focus', function() {
             this.style.transform = 'translateY(-2px)';
-            this.style.boxShadow = '0 8px 20px rgba(99, 102, 241, 0.2)';
+            this.style.boxShado - use CSS classes
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.classList.add('input-focused');
         });
         input.addEventListener('blur', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Add smooth scroll behavior
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            this.classList.remove('input-focused')ach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
@@ -98,24 +97,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Add navbar scroll effect
-    const navbar = document.querySelector('.custom-navbar');
-    let lastScrollTop = 0;
+    const navbar = document.que (throttled for performance)
+    const navbar = document.querySelector('.custom-navbar, .navbar-user, .navbar-admin');
+    let lastScrollTime = 0;
+    const scrollThrottle = 100;
     
     window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > 100) {
-            navbar.style.boxShadow = '0 8px 32px rgba(99, 102, 241, 0.3)';
-        } else {
-            navbar.style.boxShadow = '0 8px 32px rgba(99, 102, 241, 0.2)';
+        if (!navbar) return;
+        const now = Date.now();
+        if (now - lastScrollTime >= scrollThrottle) {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 100) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+            lastScrollTime = now;
         }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-
+    }, { passive: true
     // Add active link styling on navigation
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        if (link.href === window.location.href) {
             link.classList.add('active');
             link.style.background = 'rgba(255, 255, 255, 0.15)';
         }

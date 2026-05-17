@@ -10,71 +10,98 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2563eb" />
     <title>@ViewData["Title"] - منطقتي</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <!-- preload intentionally omitted: placeholder URL would break font loading -->
+
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/animations.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/components.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modern-design.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Qaryati.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/homepage-wow.css" asp-append-version="true" />
 </head>
 <body class="@(isAdmin ? "admin-mode" : "user-mode")">
-    <header>
-        <nav class="navbar navbar-expand-lg @(isAdmin ? "admin-navbar" : "custom-navbar")">
-            <div class="container custom-navbar-container">
+    <!-- Header -->
+    <header class="modern-header">
+        <nav class="navbar navbar-expand-xl @(isAdmin ? "navbar-admin" : "navbar-user") sticky-top">
+            <div class="container-fluid px-4 px-lg-5">
+                <!-- Brand -->
                 <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
-                    @if (isAdmin)
-                    {
-                        <i class="fas fa-shield-alt brand-icon"></i>
-                        <span class="brand-text">Qaryati Admin</span>
-                    }
-                    else
-                    {
-                        <i class="fas fa-map-location-dot brand-icon"></i>
-                        <span class="brand-text">منطقتي</span>
-                    }
+                    <div class="brand-wrapper">
+                        @if (isAdmin)
+                        {
+                            <i class="fas fa-shield-alt brand-icon"></i>
+                            <span class="brand-text">منطقتي</span>
+                            <span class="badge badge-admin">إدارة</span>
+                        }
+                        else
+                        {
+                            <i class="fas fa-map-location-dot brand-icon"></i>
+                            <span class="brand-text">منطقتي</span>
+                        }
+                    </div>
                 </a>
 
-                <button class="navbar-toggler custom-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                <!-- Navbar Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
                         aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <!-- Navbar Content -->
                 <div class="collapse navbar-collapse" id="mainNavbar">
-
                     @if (isAdmin)
                     {
-                        <!-- Admin Navbar -->
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center custom-nav-links">
+                        <!-- Admin Navigation -->
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-xl-center nav-admin-menu">
                             <li class="nav-item">
-                                <a class="nav-link admin-link" asp-controller="Admin" asp-action="Index">لوحة التحكم</a>
+                                <a class="nav-link nav-admin-item" asp-controller="Admin" asp-action="Index">
+                                    <i class="fas fa-tachometer-alt"></i> لوحة التحكم
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link admin-link" asp-controller="Categories" asp-action="Index">إدارة الأقسام</a>
+                                <a class="nav-link nav-admin-item" asp-controller="Categories" asp-action="Index">
+                                    <i class="fas fa-list"></i> الأقسام
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link admin-link" asp-controller="Services" asp-action="Index">إدارة الخدمات</a>
+                                <a class="nav-link nav-admin-item" asp-controller="Services" asp-action="Index">
+                                    <i class="fas fa-briefcase"></i> الخدمات
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link admin-link" asp-controller="Suggestions" asp-action="Index">اقتراحات الخدمات</a>
+                                <a class="nav-link nav-admin-item" asp-controller="Suggestions" asp-action="Index">
+                                    <i class="fas fa-lightbulb"></i> الاقتراحات
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link admin-link" asp-controller="AdSubmissions" asp-action="Index">طلبات الإعلانات</a>
+                                <a class="nav-link nav-admin-item" asp-controller="AdSubmissions" asp-action="Index">
+                                    <i class="fas fa-newspaper"></i> طلبات الإعلانات
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link admin-link" asp-controller="Ads" asp-action="Manage">إدارة الإعلانات</a>
+                                <a class="nav-link nav-admin-item" asp-controller="Ads" asp-action="Manage">
+                                    <i class="fas fa-bullhorn"></i> إدارة الإعلانات
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link admin-link" asp-controller="Home" asp-action="Index">عرض الموقع</a>
+                                <a class="nav-link nav-admin-item" asp-controller="Home" asp-action="Index">
+                                    <i class="fas fa-eye"></i> عرض الموقع
+                                </a>
                             </li>
-                        </ul>
-
-                        <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
-                            <li class="nav-item">
+                            <li class="nav-item ms-xl-2">
                                 <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
                                     @Html.AntiForgeryToken()
-                                    <button type="submit" class="btn nav-auth-btn admin-logout-btn">
-                                        تسجيل الخروج
+                                    <button type="submit" class="btn btn-logout">
+                                        <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
                                     </button>
                                 </form>
                             </li>
@@ -82,69 +109,129 @@
                     }
                     else
                     {
-                        <!-- User Navbar -->
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center custom-nav-links">
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Index">الرئيسية</a>
-                            </li>
+                        <!-- User Navigation -->
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-xl-center nav-user-menu">
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Categories">الأقسام</a>
+                                <a class="nav-link nav-user-item" asp-controller="Home" asp-action="Categories">
+                                    <i class="fas fa-th-list"></i> الأقسام
+                                </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="AllServices">الخدمات</a>
+                                <a class="nav-link nav-user-item" asp-controller="Home" asp-action="AllServices">
+                                    <i class="fas fa-concierge-bell"></i> الخدمات
+                                </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Ads" asp-action="Index">الإعلانات</a>
+                                <a class="nav-link nav-user-item" asp-controller="Ads" asp-action="Index">
+                                    <i class="fas fa-megaphone"></i> الإعلانات
+                                </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="SuggestionForm">اقترح خدمة</a>
+                                <a class="nav-link nav-user-item" asp-controller="Home" asp-action="SuggestionForm">
+                                    <i class="fas fa-pen-fancy"></i> اقترح خدمة
+                                </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="AdSubmissions" asp-action="Create">أضف إعلان</a>
+                                <a class="nav-link nav-user-item" asp-controller="AdSubmissions" asp-action="Create">
+                                    <i class="fas fa-plus-circle"></i> أضف إعلان
+                                </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="About">معلومات عني</a>
+                                <a class="nav-link nav-user-item" asp-controller="Home" asp-action="About">
+                                    <i class="fas fa-info-circle"></i>  About Me
+                                </a>
                             </li>
                         </ul>
 
-                        <form class="custom-search-wrapper mx-lg-3 my-3 my-lg-0" asp-controller="Home" asp-action="Search" method="get">
-                            <input class="custom-search-input" type="search" name="searchTerm" placeholder="ابحث عن خدمة أو محل..." aria-label="Search">
-                            <button class="custom-search-btn" type="submit">بحث</button>
+                        <!-- Search Form -->
+                        <form class="navbar-search-form ms-xl-4" asp-controller="Home" asp-action="Search" method="get">
+                            <div class="search-wrapper">
+                                <input class="form-control search-input" type="search" name="searchTerm" placeholder="ابحث عن خدمة أو متجر..." aria-label="Search">
+                                <button class="btn-search" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
                         </form>
 
-                        <div class="ms-lg-auto mt-3 mt-lg-0">
-                            <a class="btn nav-auth-btn login-btn" asp-controller="Account" asp-action="Login">دخول الأدمن</a>
+                        <!-- Admin Login -->
+                        <div class="ms-xl-3 mt-3 mt-xl-0">
+                            <a class="btn btn-login" asp-controller="Account" asp-action="Login">
+                                <i class="fas fa-user-shield"></i> دخول الإدارة
+                            </a>
                         </div>
                     }
-
                 </div>
             </div>
         </nav>
     </header>
 
-    <div class="container main-content">
-        <main role="main" class="pb-4">
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container-fluid px-4 px-lg-5">
             @RenderBody()
-        </main>
-    </div>
+        </div>
+    </main>
 
-    <footer class="custom-footer mt-5 @(isAdmin ? "admin-footer" : "")">
-        <div class="container text-center">
-            <p class="mb-0">
-                @(isAdmin ? "Admin Panel - Qaryati" : "© 2026 - منطقتي | دليل خدمات المنطقة")
-            </p>
+    <!-- Footer -->
+    <footer class="modern-footer mt-5 mt-lg-6 @(isAdmin ? "footer-admin" : "")">
+        <div class="footer-top">
+            <div class="container-fluid px-4 px-lg-5">
+                <div class="row gy-4">
+                    <!-- About Section -->
+                    <div class="col-lg-4">
+                        <div class="footer-brand mb-3">
+                            <i class="fas fa-map-location-dot"></i>
+                            <span>منطقتي</span>
+                        </div>
+                        <p class="footer-text">
+                            دليل خدمات المنطقة الشامل والموثوق. ابحث عن كل الخدمات التي تحتاجها في مكان واحد.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/ahhmmeed14" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/201112112568" class="social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-6 col-lg-4">
+                        <h5 class="footer-heading">روابط سريعة</h5>
+                        <ul class="footer-links">
+                            <li><a asp-controller="Home" asp-action="Index">الرئيسية</a></li>
+                            <li><a asp-controller="Home" asp-action="Categories">الأقسام</a></li>
+                            <li><a asp-controller="Home" asp-action="AllServices">الخدمات</a></li>
+                            <li><a asp-controller="Ads" asp-action="Index">الإعلانات</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-md-6 col-lg-4">
+                        <h5 class="footer-heading">تواصل معنا</h5>
+                        <ul class="footer-contact">
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:ahmedshaabanabdo948@gmail.com">ahmedshaabanabdo948@gmail.com</a></li>
+                            <li><i class="fas fa-phone"></i> <a href="tel:+201112112568">+201112112568</a></li>
+                         
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container-fluid px-4 px-lg-5">
+                <div class="footer-divider"></div>
+                <p class="footer-copyright">
+                    &copy; 2026 <strong>منطقتي</strong> - جميع الحقوق محفوظة | 
+                </p>
+            </div>
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js" defer></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="~/js/site.js" asp-append-version="true" defer></script>
+
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

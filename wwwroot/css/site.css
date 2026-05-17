@@ -1,6 +1,7 @@
 html {
     font-size: 14px;
     direction: rtl;
+    color-scheme: dark;
 }
 
 @media (min-width: 768px) {
@@ -47,6 +48,7 @@ body {
     background-attachment: fixed;
     color: var(--text-main);
     overflow-x: hidden;
+    color-scheme: dark;
 }
 
 /* Smooth scrolling */
